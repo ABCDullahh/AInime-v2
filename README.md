@@ -294,8 +294,8 @@ flowchart LR
 
 ```bash
 # Clone the repository
-git clone https://github.com/ABCDullahh/ainime.git
-cd ainime
+git clone https://github.com/ABCDullahh/AInime-v2.git
+cd AInime-v2
 
 # Install frontend dependencies
 npm install

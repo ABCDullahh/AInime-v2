@@ -145,7 +145,7 @@ export default function About() {
             </p>
             <div className="flex items-center gap-4 flex-wrap">
               <a
-                href="https://github.com/ABCDullahh/AInime"
+                href="https://github.com/ABCDullahh/AInime-v2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#f97316] text-[#582200] px-6 py-3 rounded-full font-bold text-sm tracking-tight hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] transition-all"

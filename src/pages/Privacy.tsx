@@ -58,7 +58,7 @@ const sections = [
     ],
     link: {
       text: 'Open a GitHub Issue',
-      url: 'https://github.com/ABCDullahh/AInime/issues',
+      url: 'https://github.com/ABCDullahh/AInime-v2/issues',
     },
   },
 ];

@@ -28,7 +28,7 @@ export function Footer() {
         </Link>
       </div>
       <a
-        href="https://github.com/ABCDullahh/AInime"
+        href="https://github.com/ABCDullahh/AInime-v2"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 text-[0.75rem] tracking-[0.15em] uppercase text-slate-500 hover:text-orange-500 transition-all mb-12"
