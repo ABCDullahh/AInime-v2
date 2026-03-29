@@ -1,0 +1,91 @@
+```markdown
+# Design System Specification: The Digital Curator
+
+## 1. Overview & Creative North Star
+This design system is built upon the philosophy of **"The Digital Curator."** It rejects the cluttered, utility-first aesthetics of traditional streaming platforms in favor of a high-fashion, editorial experience. The goal is to make every screen feel like a curated gallery transition or a premium print magazine spread.
+
+### The Creative North Star: Editorial Futurist
+We move beyond "standard" UI by treating the screen as a canvas where negative space is as important as content. We break the rigid template look through:
+*   **Intentional Asymmetry:** Using generous, uneven margins to guide the eye.
+*   **Typographic Dominance:** Relying on scale and weight rather than boxes and lines to define structure.
+*   **Atmospheric Depth:** Using "Deepest Night" layering to create an immersive, cinematic environment.
+
+---
+
+## 2. Colors & Surface Philosophy
+
+### The "No-Line" Rule
+**Explicit Instruction:** Designers are prohibited from using 1px solid borders for sectioning or containment. Boundaries must be defined solely through background color shifts or high-contrast typography. If a section needs to end, let it bleed into the background or shift from `surface` to `surface-container-low`.
+
+### Color Palette (Material Design Tokens)
+*   **Background / Surface:** `#0c1324` (Deep Slate/Navy). The foundation of the "Deepest Night."
+*   **Primary (Surgical Accent):** `primary-container` (`#f97316`). Use this sparingly—like a scalpel. It is for critical CTAs and active states only.
+*   **Secondary (Ethereal):** `secondary` (`#d0bcff`). Used for softer accents, highlights, and "designer" flourishes.
+*   **Surface Hierarchy:** Use `surface-container-lowest` through `highest` to create nested depth. 
+
+### Signature Textures & Glass
+*   **Refined Glass:** Floating elements (modals, navigation bars) must use `surface` colors at 40% opacity with a `40px` backdrop-blur. 
+*   **Grain:** Apply a subtle 3% monochromatic noise texture to the base `background` layer to eliminate "banding" and add a tactile, film-like quality.
+
+---
+
+## 3. Typography: The Architect of Space
+
+Typography is the primary structural element of this system. We use **Plus Jakarta Sans** exclusively, but manipulate it to create two distinct "voices."
+
+### The Scale
+*   **Display (LG/MD):** 3.5rem / 2.75rem. **Tight tracking (-4%).** These are your "Editorial Statements." Use these for hero titles. Occasionally use *Italic* for the second word in a headline to create a "Designer" signature.
+*   **Headlines:** 2rem - 1.5rem. Bold and authoritative. 
+*   **Labels (MD/SM):** 0.75rem. **Wide tracking (+15%).** All-caps. Used for metadata, categories, and overlines. This creates a high-fashion "tag" look.
+*   **Body:** 1rem - 0.875rem. Clean, high-readability with generous line-height (1.6).
+
+### Typographic Hierarchy
+Contrast is achieved by pairing a `display-lg` headline with a `label-sm` uppercase tag. Do not use middle-ground sizes; either go big or go small to maintain the editorial tension.
+
+---
+
+## 4. Elevation & Depth: Tonal Layering
+
+We do not use shadows to lift elements; we use **Tonal Layering**.
+
+*   **The Layering Principle:** Place a `surface-container-lowest` card on a `surface-container-low` section. The "lift" comes from the subtle shift in navy/slate tones, not a drop shadow.
+*   **Ambient Shadows:** If a floating element (like a context menu) requires a shadow, use a blur of `48px` at 6% opacity, using the `on-surface` color (a soft blue-white) to create an "inner glow" rather than a dark "outer shadow."
+*   **The Ghost Border:** For accessibility in input fields, use `outline-variant` at **15% opacity**. Never use 100% opaque lines.
+
+---
+
+## 5. Components
+
+### Buttons
+*   **Primary:** Pill-shaped (`full`). Background: `primary-container` (`#f97316`). Text: `on-primary` (Deep Brown). No border.
+*   **Secondary (Editorial):** Pill-shaped. Background: Transparent. Text: `on-background`. Border: `outline-variant` at 20% opacity.
+*   **Tertiary:** Text-only, `label-md` style (uppercase, wide-tracked). Use an *Italic* hover state.
+
+### Cards & Lists
+*   **Style:** `xl` (1.5rem) or `lg` (1rem) corner radius. 
+*   **Separation:** Forbid dividers. Use `spacing-12` (4rem) of vertical whitespace to separate list items or content blocks. 
+*   **Interactive Cards:** On hover, do not scale up. Instead, transition the background from `surface-container-low` to `surface-container-high`.
+
+### Content Curator Chips
+*   **Shape:** Pill (`full`).
+*   **Style:** High-contrast. Inactive: `surface-container-high`. Active: `secondary` with `on-secondary` text.
+
+### The "Curator" Navigation Bar
+*   **Visuals:** A floating glass element at the bottom or side of the screen. 
+*   **Blur:** `60px` backdrop blur. 
+*   **Padding:** Use `spacing-5` (1.7rem) internal padding to ensure the navigation feels "airy."
+
+---
+
+## 6. Do’s and Don’ts
+
+### Do:
+*   **Do** use extreme whitespace. If a layout feels "full," increase the margins.
+*   **Do** use `primary-container` (#f97316) as a pinpoint accent—a single dot, a single word, or a single icon.
+*   **Do** mix regular and *italic* weights within a single headline to create visual rhythm.
+
+### Don’t:
+*   **Don’t** use 1px dividers or borders to separate content.
+*   **Don’t** use standard "Grey" for shadows; use tinted navy or deep violet blurs.
+*   **Don’t** crowd the edges. The "safe zone" for this system is `spacing-10` (3.5rem) from the screen edge.
+*   **Don’t** use colorful gradients for backgrounds. Keep backgrounds "Deepest Night" and save gradients for very small, high-impact CTA surfaces.

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My List | AInime</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#0c1324",
+              "surface": "#0c1324",
+              "inverse-surface": "#dce1fb",
+              "tertiary-fixed-dim": "#93ccff",
+              "surface-dim": "#0c1324",
+              "on-secondary": "#3c0091",
+              "on-error": "#690005",
+              "surface-variant": "#2e3447",
+              "on-primary-container": "#582200",
+              "on-surface": "#dce1fb",
+              "on-tertiary-container": "#003554",
+              "on-secondary-fixed": "#23005c",
+              "on-tertiary-fixed": "#001d32",
+              "surface-container-low": "#151b2d",
+              "on-secondary-fixed-variant": "#5516be",
+              "surface-container": "#191f31",
+              "on-tertiary-fixed-variant": "#004b74",
+              "surface-container-lowest": "#070d1f",
+              "primary": "#ffb690",
+              "surface-tint": "#ffb690",
+              "outline-variant": "#584237",
+              "surface-bright": "#33394c",
+              "inverse-primary": "#9d4300",
+              "on-secondary-container": "#c4abff",
+              "primary-container": "#f97316",
+              "surface-container-high": "#23293c",
+              "on-surface-variant": "#e0c0b1",
+              "on-primary-fixed": "#341100",
+              "outline": "#a78b7d",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#ffdbca",
+              "on-primary": "#552100",
+              "surface-container-highest": "#2e3447",
+              "primary-fixed-dim": "#ffb690",
+              "secondary-container": "#571bc1",
+              "on-tertiary": "#003351",
+              "on-background": "#dce1fb",
+              "secondary": "#d0bcff",
+              "tertiary-container": "#00a2f4",
+              "secondary-fixed": "#e9ddff",
+              "on-primary-fixed-variant": "#783200",
+              "tertiary-fixed": "#cde5ff",
+              "inverse-on-surface": "#2a3043",
+              "error": "#ffb4ab",
+              "tertiary": "#93ccff",
+              "error-container": "#93000a",
+              "secondary-fixed-dim": "#d0bcff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0c1324;
+            background-image: radial-gradient(circle at 50% 50%, rgba(25, 31, 49, 0.5) 0%, rgba(12, 19, 36, 1) 100%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #dce1fb;
+        }
+        .glass-effect {
+            backdrop-filter: blur(40px);
+        }
+        .grain-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 99;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0c1324]/40 backdrop-blur-[40px] flex justify-between items-center px-[3.5rem] h-20 w-full max-w-none">
+<div class="text-2xl font-black tracking-tighter text-slate-50 dark:text-slate-50">AInime</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors hover:text-orange-400 transition-all duration-300" href="#">Discover</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors hover:text-orange-400 transition-all duration-300" href="#">AI Search</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors hover:text-orange-400 transition-all duration-300" href="#">Calendar</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-orange-500 font-bold border-b-2 border-orange-500 pb-1 hover:text-orange-400 transition-all duration-300" href="#">My List</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors hover:text-orange-400 transition-all duration-300" href="#">Tier Lists</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-white transition-colors">notifications</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-white transition-colors">account_circle</span>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-[3.5rem] max-w-[1440px] mx-auto">
+<!-- Hero Section -->
+<header class="mb-20">
+<h1 class="text-8xl md:text-[10rem] font-black tracking-[-0.06em] leading-none text-on-surface">
+                MY <span class="text-primary-container italic font-light">LIST</span>
+</h1>
+<p class="mt-4 text-slate-400 font-label tracking-[0.15em] uppercase text-sm">Curating your digital library.</p>
+</header>
+<!-- Status Filter -->
+<div class="flex flex-wrap gap-12 mb-20">
+<a class="text-primary-container font-bold border-b-2 border-primary-container pb-2 tracking-wide transition-all" href="#">Watching</a>
+<a class="text-slate-500 hover:text-on-surface pb-2 tracking-wide transition-all" href="#">Saved</a>
+<a class="text-slate-500 hover:text-on-surface pb-2 tracking-wide transition-all" href="#">Loved</a>
+<a class="text-slate-500 hover:text-on-surface pb-2 tracking-wide transition-all" href="#">Watched</a>
+<a class="text-slate-500 hover:text-on-surface pb-2 tracking-wide transition-all" href="#">Dropped</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left Column: Currently Watching & Summary -->
+<div class="lg:col-span-8 space-y-16">
+<!-- Currently Watching -->
+<section>
+<div class="label-sm text-slate-500 tracking-[0.2em] uppercase text-[0.7rem] font-bold mb-6">Immediate Focus</div>
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-low aspect-[21/9] flex items-end">
+<img alt="Currently Watching Background" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" data-alt="atmospheric cinematic anime scene with neon city lights reflecting in puddles on a rainy night in a cyberpunk aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIKgynITQK9nKDvYSr7EaLDvLD4c5VUC3UD2nthybvuNzQwNufb9k5B_0k-PvOe92TUqGtVKJus5y9bvXbFWHIeR4lkfBcpko6u8Ceb7eLIbeFjST9ubTbx2QAumDJREkFz8qfiNXFbS5Uk2FBUIyvVgaSheuBTizH_h9z6mrejsYmy6uzvxSNWCHky2BH3gzTwlKVU6xtHMM4bs0pJQLe4q5m20RYSTIGg0q6JENC32ilJBM_Qe72FevuU3a3IpApgcITAa38Rig"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="relative p-10 w-full">
+<h2 class="text-4xl font-bold tracking-tight mb-2">Ghost in the Shell: SAC_2045</h2>
+<p class="text-slate-400 mb-8 max-w-md">S2 E08 — "Eternal Spring of the Digital Soul"</p>
+<div class="flex items-center gap-6">
+<button class="bg-primary-container text-on-primary-container font-bold px-8 py-3 rounded-full flex items-center gap-2 hover:brightness-110 transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                    Next Episode
+                                </button>
+<div class="flex-1 max-w-xs">
+<div class="flex justify-between text-[0.65rem] uppercase tracking-widest text-slate-500 mb-2">
+<span>Progress</span>
+<span>64%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[64%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Summary -->
+<section class="bg-surface-container-low p-10 rounded-xl">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div>
+<h3 class="text-xl font-bold">Curator Insights</h3>
+<p class="text-[0.7rem] uppercase tracking-[0.15em] text-slate-500">AI-DRIVEN TASTE ANALYSIS</p>
+</div>
+</div>
+<p class="text-lg text-slate-300 leading-relaxed font-light italic">
+                        "Your current collection suggests a profound affinity for <span class="text-primary-container font-medium not-italic">speculative realism</span> and <span class="text-primary-container font-medium not-italic">existential cyberpunk</span>. You tend to favor narratives where technological evolution intersects with human fragility. Your 92% completion rate on 'Seinen' titles indicates a preference for complex, slow-burn world-building over episodic action. Recommendation: Prioritize 'Psycho-Pass' if looking for thematic continuity."
+                    </p>
+</section>
+</div>
+<!-- Right Column: Taste Profile -->
+<div class="lg:col-span-4 space-y-8">
+<div class="label-sm text-slate-500 tracking-[0.2em] uppercase text-[0.7rem] font-bold">Taste Profile</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between h-48 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary-container text-3xl">done_all</span>
+<div>
+<div class="text-5xl font-black tracking-tighter">92%</div>
+<div class="text-[0.65rem] uppercase tracking-[0.2em] text-slate-500 mt-1">Completion Rate</div>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between h-48 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl">precision_manufacturing</span>
+<div>
+<div class="text-4xl font-black tracking-tighter uppercase italic">Cyberpunk</div>
+<div class="text-[0.65rem] uppercase tracking-[0.2em] text-slate-500 mt-1">Top Genre</div>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between h-48 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-slate-300 text-3xl">schedule</span>
+<div>
+<div class="text-5xl font-black tracking-tighter">1,240</div>
+<div class="text-[0.65rem] uppercase tracking-[0.2em] text-slate-500 mt-1">Hours Curated</div>
+</div>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between h-48 hover:bg-surface-container transition-colors border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary-container text-3xl">star</span>
+<div>
+<div class="text-5xl font-black tracking-tighter">8.4</div>
+<div class="text-[0.65rem] uppercase tracking-[0.2em] text-slate-500 mt-1">Mean Score</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Grid: The Library -->
+<section class="mt-32">
+<div class="flex justify-between items-end mb-12">
+<h3 class="text-5xl font-black tracking-tight uppercase">Recent <span class="text-slate-500 font-light italic">Additions</span></h3>
+<div class="flex gap-4">
+<button class="p-3 rounded-full border border-outline-variant/20 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-3 rounded-full border border-outline-variant/20 hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">reorder</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Anime Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-surface-container-low relative">
+<img alt="Anime Title 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="dramatic close up of a stylized anime character with glowing neon eyes and a mysterious atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwLV4Ui75gu0Gu9mu3KXV7fx_YbBOb4rTlrgr8nvhkmNuudH-g1pXqnCHEgwk68Rxl0P0eANKPAZIDYJpUzoH_tl-0ZjvWlXK7odUJqZ6ZEb89i9kwk2OvBihKNM5f-fXkahTS17qnCS2JY_2e0GRCWcSwuPghlH_9uGDwd1gjw63hnXTu2kZaKerhnfaadu6_BJHGdxW1GMDh-WQCiIVzN6mmUjAXOpejqT3eiJcoanVCfDbhgOaP7mzp8xZrW99Qt4AKptSRFqE"/>
+<div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-[0.6rem] font-bold tracking-widest uppercase">
+                            8.9
+                        </div>
+</div>
+<h4 class="text-lg font-bold group-hover:text-primary-container transition-colors">Vagabond: The Animated Saga</h4>
+<p class="text-[0.7rem] uppercase tracking-[0.1em] text-slate-500 mt-1">Seinen • Historical</p>
+</div>
+<!-- Anime Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-surface-container-low relative">
+<img alt="Anime Title 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="abstract minimalist anime style illustration of a lonely figure standing against a vast cosmic sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcWyXHb7J8ROMBxWn9rPPzFp0WntBlwz-BXP8z3ZL9hTiPJS02F-5jeSK2t7wRAE6tn--IldWcK5sUP8jjlmFgz6D0p929siPY_h79xjpZSd6ByPWPnA-yWK9si8Enthfs0VEche0lr8Dm6HDNRzcbDIybzE7kXeDbRlgFkMlEwpNJxQKvuq_k3cLm6TysrO3XS_CHq2B3aCUKTpGYOPNwfeFNcF9CBqL1hUfTVQd8wgyTvnRIrGKoUUYix3JByAmXnKw21yezAOI"/>
+<div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-[0.6rem] font-bold tracking-widest uppercase text-primary-container">
+                            Plan
+                        </div>
+</div>
+<h4 class="text-lg font-bold group-hover:text-primary-container transition-colors">Solaris: Edge of Light</h4>
+<p class="text-[0.7rem] uppercase tracking-[0.1em] text-slate-500 mt-1">Sci-Fi • Space</p>
+</div>
+<!-- Anime Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-surface-container-low relative">
+<img alt="Anime Title 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="blurred neon Tokyo street at night in an anime aesthetic with vibrant pink and blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1XjLLsDWRUYGIlEn4LliG_XYF8QsLBidmF5wLNJYTZdDEb11vAPnPlp9E44_H4iOtOs4mA6TLe66TZsKlGIhVZZZepDyolMRI-9BdDyCSGM5hWAE-r-Vy9sFO4Ad3r0LnCwi_qyE03H1_lLHR7YhCutagWK6crU85WyUTUUA2RUozL6XFV5wF1L-ifLWz1mueftCAl8UJ4eUv8hK9C5A084uVpjrEAau5Jyc6Se5MWsMCKlWV1yy2pZTNWhsq5YwHLwRHKyxaRn8"/>
+<div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-[0.6rem] font-bold tracking-widest uppercase">
+                            9.4
+                        </div>
+</div>
+<h4 class="text-lg font-bold group-hover:text-primary-container transition-colors">Neo-Tokyo 2088</h4>
+<p class="text-[0.7rem] uppercase tracking-[0.1em] text-slate-500 mt-1">Cyberpunk • Thriller</p>
+</div>
+<!-- Anime Card 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-surface-container-low relative">
+<img alt="Anime Title 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="minimalist mountain landscape with a lone shrine in a traditional Japanese art style with soft morning mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTr_QZKGr0o-XXn2ajOd5WBxoFZWgx9H7uGAS3AEKuE6ousFXPHO0TBRJPgMSrqxi4YzKlk7w5SvicrNj5QD4e6cjjpuNGPd3-tclPyokLMgEMlvLr4rvPXflMNiZUAv4A1PKf-HEq-odOQ6VvBAWtaqOv9KXRlzvZ5T-iuvh3qSRlI_RkMMRMWqMYzo6H_4Cxi6e3AT0F69NZ6wMaF72OCb36XU4GVK3PD36e1vnqUIaG3GGCwQaJmn6vYAMmuvyFQOLnA8NrJW0"/>
+<div class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-[0.6rem] font-bold tracking-widest uppercase text-secondary">
+                            Loved
+                        </div>
+</div>
+<h4 class="text-lg font-bold group-hover:text-primary-container transition-colors">Silent Peak</h4>
+<p class="text-[0.7rem] uppercase tracking-[0.1em] text-slate-500 mt-1">Slice of Life • Supernatural</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-[#0c1324] flex flex-col items-center justify-center w-full px-[3.5rem]">
+<div class="text-6xl font-black text-slate-800/50 mb-8 block text-center tracking-tighter">AInime</div>
+<div class="flex gap-8 mb-8">
+<a class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-500 hover:text-orange-500 italic transition-all" href="#">About</a>
+<a class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-500 hover:text-orange-500 italic transition-all" href="#">Privacy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-500 hover:text-orange-500 italic transition-all" href="#">Terms</a>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-700">© 2024 AInime. The Digital Curator.</p>
+</footer>
+</body></html>

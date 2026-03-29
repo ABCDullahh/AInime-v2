@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#0c1324",
+              "surface": "#0c1324",
+              "inverse-surface": "#dce1fb",
+              "tertiary-fixed-dim": "#93ccff",
+              "surface-dim": "#0c1324",
+              "on-secondary": "#3c0091",
+              "on-error": "#690005",
+              "surface-variant": "#2e3447",
+              "on-primary-container": "#582200",
+              "on-surface": "#dce1fb",
+              "on-tertiary-container": "#003554",
+              "on-secondary-fixed": "#23005c",
+              "on-tertiary-fixed": "#001d32",
+              "surface-container-low": "#151b2d",
+              "on-secondary-fixed-variant": "#5516be",
+              "surface-container": "#191f31",
+              "on-tertiary-fixed-variant": "#004b74",
+              "surface-container-lowest": "#070d1f",
+              "primary": "#ffb690",
+              "surface-tint": "#ffb690",
+              "outline-variant": "#584237",
+              "surface-bright": "#33394c",
+              "inverse-primary": "#9d4300",
+              "on-secondary-container": "#c4abff",
+              "primary-container": "#f97316",
+              "surface-container-high": "#23293c",
+              "on-surface-variant": "#e0c0b1",
+              "on-primary-fixed": "#341100",
+              "outline": "#a78b7d",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#ffdbca",
+              "on-primary": "#552100",
+              "surface-container-highest": "#2e3447",
+              "primary-fixed-dim": "#ffb690",
+              "secondary-container": "#571bc1",
+              "on-tertiary": "#003351",
+              "on-background": "#dce1fb",
+              "secondary": "#d0bcff",
+              "tertiary-container": "#00a2f4",
+              "secondary-fixed": "#e9ddff",
+              "on-primary-fixed-variant": "#783200",
+              "tertiary-fixed": "#cde5ff",
+              "inverse-on-surface": "#2a3043",
+              "error": "#ffb4ab",
+              "tertiary": "#93ccff",
+              "error-container": "#93000a",
+              "secondary-fixed-dim": "#d0bcff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #0c1324;
+        background-image: radial-gradient(circle at 50% 50%, rgba(25, 31, 49, 0.5) 0%, rgba(12, 19, 36, 1) 100%);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+      }
+      .grain-texture::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        opacity: 0.03;
+        z-index: 100;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+    </style>
+</head>
+<body class="text-on-background selection:bg-primary-container selection:text-on-primary-container grain-texture">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0c1324]/40 backdrop-blur-[40px] flex justify-between items-center px-[3.5rem] h-20 w-full max-w-none">
+<div class="text-2xl font-black tracking-tighter text-slate-50 dark:text-slate-50">AInime</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors" href="#">Discover</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors" href="#">AI Search</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors" href="#">Calendar</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors" href="#">My List</a>
+<a class="font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium text-orange-500 font-bold border-b-2 border-orange-500 pb-1" href="#">Tier Lists</a>
+</div>
+<div class="flex items-center space-x-6 text-slate-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-orange-400 transition-all">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-orange-400 transition-all">account_circle</span>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-[3.5rem]">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-4xl">
+<span class="label-sm tracking-[0.15em] uppercase text-primary font-bold mb-4 block">Archive 04: Rankings</span>
+<h1 class="text-6xl md:text-8xl font-black tracking-[-0.04em] leading-[0.9] text-on-surface">
+                    DIGITAL <br/> <span class="italic font-light text-slate-400">CURATION</span>
+</h1>
+</div>
+<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-full font-bold tracking-tight hover:scale-95 transition-transform flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                CREATE NEW
+            </button>
+</header>
+<!-- Featured Tier List (Hero) -->
+<section class="mb-32">
+<div class="relative group cursor-pointer overflow-hidden rounded-xl bg-surface-container-low p-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-1 bg-background rounded-[0.7rem] overflow-hidden">
+<div class="lg:col-span-5 h-[500px] relative">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Cinematic wide shot of futuristic anime city skyline with neon lights and deep purple atmosphere, highly detailed digital art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv4BebopAUAcfETqoce0FF8Gp8v4pu_ek0csYSXdurRF1k9ABfGAzP7WFUK8yIjsGx02TeM4q0kIKdK8Ex9iKIV-hLwvrJbdHGBXQA9ODY65xrTIktySGVejqv9btsKCGj4KsDIpMoHcqHse-lbHrX4YIq7b7shgcyFWnXGRdWubSptVbgoZ-XJlLyv1NRyf-Unb-gsukSFjTKtUlZxfX-8cd7JSodxSgI2kT8NkO-HJx42BDoXh81T1owSPKwUrMOThKwj9-cx9w"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent flex flex-col justify-end p-12">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-[0.65rem] font-bold tracking-[0.2em] uppercase w-fit mb-4">Masterpiece Collection</span>
+<h2 class="text-4xl font-bold mb-2">Winter 2024: <br/>The Definitive List</h2>
+<p class="text-slate-400 text-sm max-w-xs">Curated by AInime Intelligence. Evaluating kinetic energy, narrative depth, and visual fidelity.</p>
+</div>
+</div>
+<div class="lg:col-span-7 p-8 flex flex-col justify-center space-y-4">
+<!-- Tier Rows -->
+<div class="flex items-center gap-6 group/row">
+<div class="w-16 h-16 flex items-center justify-center bg-error-container text-error rounded-xl font-black text-3xl">S</div>
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<div class="w-20 h-28 flex-shrink-0 bg-surface-container-highest rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Close up of a character with glowing blue eyes in a cyberpunk setting, sharp lines, cinematic anime style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOq6IX002epDG_UExKkYpG0aaScENmJC6Td0B_ZfJL4phnC60bQdxyii2lybUwkix-ICG8skze0fjkrn7bVwjX9aS_btqPWL36TNjx5XrvksGXMFUkP8nyTDX6vTZ6QZUwgR-qN10IhS9TTL4rk4-QpAK5VHsT54NPgluMydroVXv2W507rtTgWYniZv-Xho3WEilJKig1DZZQ7P8nlynuL5IVgcAxl1mNXJwd5sUpwKTbM_O8wvO62PJab8hvo05xhafPExC4PXA"/>
+</div>
+<div class="w-20 h-28 flex-shrink-0 bg-surface-container-highest rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Ethereal landscape with floating islands and cherry blossoms, soft lighting, detailed scenery anime" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpwBgCa2Pv2j-SIaMTGV1USXoUEfILEV33CiWzHw5VGLLVUy0XcrLYJZrvr_B-SaRznILoE674IM8pC8Q9ulj7BphzfBPJ6j9SgUgTMfPJ8GeI8Q4cy0MvKDHt9tjbjPA_9b5CXY6LItI1IKR8WDNfT2ryF8SsmNogzo_5r5xMzYiGj6LaWH1ZJfe1M_kmckwmcIn2nx67eAYTeIRn_i0j0Nw5j2OcVl1Ji2lh0atQu5KvwIVWwKhYWxIECgAIG9wgSVKRWXBOCEQ"/>
+</div>
+<div class="w-20 h-28 flex-shrink-0 bg-surface-container-highest rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Dramatic silhouette of a mecha robot against a giant red moon, atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNijkBLcLJH5pbhxmyhAN9kEhhL3wdoEJ1n1osvakWT0LBsEkFeIzlrv6PrLfjjyexnBDm6FxoZOAdFyqAuzkvBC7eJ3uboQTWk0fjnT3T8EHbKHqxpssJ15CJJCJp1uuIQKZwa8OInFYfCVY6knUCKKCaOtTul-gKf27eTfVE4FCSqBuNa4Na5mNtsHcWNrHqPd7MqBJhCl_gwnu0cvBWO6sDhcrpxtYU0OdOTfYBtW1KCWZxzcWWD_ZuVDOSAUYkAvCHSdZElWU"/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 flex items-center justify-center bg-primary-container text-on-primary-container rounded-xl font-black text-3xl">A</div>
+<div class="flex gap-3">
+<div class="w-20 h-28 bg-surface-container-high rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="Action sequence with magical circles and golden sparks, dynamic anime frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7NnK6hrFksn51laVlWb-ZlWPLmHoKLv-XgvMVt_rjowDwalSi8WjJfi5beL71ggXlbXlYzbdMNEeUpxF8l4ERHiCrsuAwMP2DnVTLJ6eXWyh_XPC3MhAUFmxDRygYXfeNurj7auQV-uxErVbTRO5R99_Rf1459Wp_2SU_g3vnEotZez29JJsiOdLGgpKVQVKRByaKQCMDLQRH2bAvaQPoci8a4zGdPtrbBnaQfzKGyjCKeQQjvekkE360Lu6WO9B1G3VXxF6FvPI"/>
+</div>
+<div class="w-20 h-28 bg-surface-container-high rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="Portrait of a female protagonist in a vintage library, warm moody lighting, anime style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaDkrKw_J6t3JSPB8UA7uAvKhBstyFY6ybmohh3sb7cmPfd-LNT00FZi0QWiL6R9LiI25TTJdHS9S7TqEsgIlA_dngCrDTwRuIkJMc3pCkIQeyRSumSAHW2TsNOnD9sP7WB8At_IcRMX5TWy7rDnA84ettG4nEoISIsg5zyzdII1VPfgkIvGtTYMlmAAnV0trw_CdC0j5Shx7ydKs2ILZSx8iiGImHwaS1Ye6M2H4nk4UMPHAN-VNJ8eWtAUsbatBMHYtJ0y6_o84"/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 flex items-center justify-center bg-surface-container-highest text-slate-400 rounded-xl font-black text-3xl">B</div>
+<div class="flex gap-3">
+<div class="w-20 h-28 bg-surface-container-low rounded-lg border border-outline-variant/10"></div>
+<div class="w-20 h-28 bg-surface-container-low rounded-lg border border-outline-variant/10"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Curations Grid -->
+<section class="mb-32">
+<div class="flex justify-between items-baseline mb-12">
+<h3 class="text-3xl font-bold tracking-tight">Community <span class="italic font-light">Curations</span></h3>
+<a class="text-[0.75rem] tracking-[0.15em] uppercase text-slate-500 hover:text-primary transition-colors" href="#">View All Archive</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-2xl overflow-hidden mb-6">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Collection of colorful anime character posters arranged in a collage, vibrant editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv9uovS-KwwPjov_u2NjxrWKYK_AckAEVRAU55gh_Lh-yQkDAlk2Me3WNBzwHa2calEen1OWvZAIg7w26QlDZ4sy9cQaaT_X4N05EtwtCrtsrglkKhIzg1hmbjYW47hdl4qmSP_-9pp8rGALWXZOzGqhiZuo9mMeqDyOPKE1InFJl4DAxXrmbnv2DtxzlP0CMjtGKBircNylUpcvHBcXpIfd9-0qDc5a8bnpoCS3CkU_Kk8RueoNMWLxG6G5dSoQ60s7320jwxIzw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-6 right-6">
+<div class="w-12 h-12 rounded-full bg-error-container/90 glass-effect flex items-center justify-center text-error font-black text-xl border border-error/20">S</div>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700"></div>
+<span class="text-[0.65rem] tracking-wider uppercase text-slate-400 font-medium">@vortex_walker</span>
+</div>
+<h4 class="text-2xl font-bold leading-tight">Experimental Sci-Fi <br/>Visuals of the 90s</h4>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<span class="text-[0.7rem] uppercase tracking-widest text-slate-500">1.2k CURATIONS</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-600"></div>
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-500"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-2xl overflow-hidden mb-6">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract anime background with floating geometric shapes and pastel gradients, soft ethereal digital art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd9hIsyt6Wdc-_gIL_4borSIro5rX3mexTyaujn5Y8mHMWwiuA1yI6ZL5YsGFaENiXOek-DccqU95cvdKxhoSGwSmMbVqME9AO9q-QB4IGKngciF3F7TdPrKw4LUy42FamdC92tvsGb3PoX763XM34QbHzSoBgliHvfKUkGCQRkrUcIQcNprbEUQdHf8L4qcb_U6r-fbV2yhwQr6vYxeeOHdx0c-7DBqmyuc7GtkDFwTxggtfwRlDjvQjqpLEl2j3LHsZKAAgcnis"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-6 right-6">
+<div class="w-12 h-12 rounded-full bg-error-container/90 glass-effect flex items-center justify-center text-error font-black text-xl border border-error/20">S</div>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700"></div>
+<span class="text-[0.65rem] tracking-wider uppercase text-slate-400 font-medium">@lyra_studio</span>
+</div>
+<h4 class="text-2xl font-bold leading-tight">The Kyoto Animation <br/>Legacy Ranking</h4>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<span class="text-[0.7rem] uppercase tracking-widest text-slate-500">842 CURATIONS</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-600"></div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-2xl overflow-hidden mb-6">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Monochrome manga panels with high contrast ink strokes, dramatic cinematic perspective" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHyyoUU3O7G52u8lSNCpKN0L9wfnZkf4MruUkX1C7kYqMVAOn6UwPMsdQcTTvTky6yCWTOzXU9n0O4CKoaFU8Wh0oBHCOhZZ38OKJdg0UozHPZy2JBJ87TlrEIps6g1rg41ug_yJMoKlCGgTnf4QkOaEKB1nJTrEu3-87x_VMW495m7OGqLbZKVV_kg7CpbLcexuBEZ-SfsQNtSzJQRLoQXGgzvVgTOFAvrzdKnnqmav-5pjOTRclTU1pZ5bzW4EjTcxwJkccaA64"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-6 right-6">
+<div class="w-12 h-12 rounded-full bg-error-container/90 glass-effect flex items-center justify-center text-error font-black text-xl border border-error/20">S</div>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-6 h-6 rounded-full bg-slate-800 border border-slate-700"></div>
+<span class="text-[0.65rem] tracking-wider uppercase text-slate-400 font-medium">@mono_krome</span>
+</div>
+<h4 class="text-2xl font-bold leading-tight">Dark Seinen Series <br/>Atmospheric Tier</h4>
+</div>
+</div>
+<div class="flex justify-between items-center px-2">
+<span class="text-[0.7rem] uppercase tracking-widest text-slate-500">2.5k CURATIONS</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-700"></div>
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-600"></div>
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-500"></div>
+<div class="w-6 h-6 rounded-full border-2 border-background bg-slate-400"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Template Gallery -->
+<section>
+<div class="mb-12">
+<h3 class="text-[0.75rem] tracking-[0.25em] uppercase text-primary font-black mb-4">STARTING POINTS</h3>
+<h2 class="text-4xl font-bold">Base Blueprints</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-orange-500 mb-6 text-3xl">auto_awesome_motion</span>
+<h5 class="text-lg font-bold mb-2">By Genre</h5>
+<p class="text-xs text-slate-500 group-hover:text-slate-300 transition-colors">Categorize by Shonen, Seinen, Isekai, and more.</p>
+</div>
+<div class="bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-orange-500 mb-6 text-3xl">calendar_month</span>
+<h5 class="text-lg font-bold mb-2">By Season</h5>
+<p class="text-xs text-slate-500 group-hover:text-slate-300 transition-colors">Organize the best of Winter, Spring, Summer, Fall.</p>
+</div>
+<div class="bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-orange-500 mb-6 text-3xl">movie_edit</span>
+<h5 class="text-lg font-bold mb-2">By Studio</h5>
+<p class="text-xs text-slate-500 group-hover:text-slate-300 transition-colors">Compare the works of Mappa, Ufotable, and Ghibli.</p>
+</div>
+<div class="bg-surface-container p-8 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer group border-2 border-dashed border-outline-variant/20 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-slate-600 mb-2">add</span>
+<h5 class="text-sm font-bold text-slate-500">Custom Blueprint</h5>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0c1324] w-full py-20 flex flex-col items-center justify-center px-[3.5rem]">
+<span class="text-6xl font-black text-slate-800/50 mb-8 block text-center">AInime</span>
+<div class="flex gap-8 mb-12">
+<a class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-500 hover:text-orange-500 italic transition-all" href="#">About</a>
+<a class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-500 hover:text-orange-500 italic transition-all" href="#">Privacy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-500 hover:text-orange-500 italic transition-all" href="#">Terms</a>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-600">© 2024 AInime. The Digital Curator.</p>
+</footer>
+</body></html>

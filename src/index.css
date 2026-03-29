@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* The Digital Curator — Deepest Night palette */
+    --background: 222 47% 6%;
+    --foreground: 230 80% 93%;
+
+    --card: 225 35% 9%;
+    --card-foreground: 230 80% 93%;
+
+    --popover: 225 35% 8%;
+    --popover-foreground: 230 80% 93%;
+
+    --primary: 24 95% 54%;
+    --primary-foreground: 25 100% 12%;
+
+    --secondary: 264 100% 87%;
+    --secondary-foreground: 264 100% 20%;
+
+    --muted: 225 30% 14%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 264 100% 87%;
+    --accent-foreground: 230 80% 93%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 25% 18%;
+    --input: 225 25% 18%;
+    --ring: 24 95% 54%;
+
+    --radius: 0.75rem;
+
+    /* Digital Curator tokens */
+    --dc-bg: #0c1324;
+    --dc-surface: #0c1324;
+    --dc-surface-dim: #070d1f;
+    --dc-surface-low: #151b2d;
+    --dc-surface-container: #191f31;
+    --dc-surface-high: #23293c;
+    --dc-surface-highest: #2e3447;
+    --dc-surface-bright: #33394c;
+    --dc-primary: #f97316;
+    --dc-primary-soft: #ffb690;
+    --dc-secondary: #d0bcff;
+    --dc-secondary-container: #571bc1;
+    --dc-tertiary: #93ccff;
+    --dc-on-surface: #dce1fb;
+    --dc-on-surface-variant: #e0c0b1;
+    --dc-outline: #a78b7d;
+    --dc-outline-variant: #584237;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: var(--dc-bg);
+    color: var(--dc-on-surface);
+    background-image:
+      radial-gradient(at 0% 0%, rgba(25, 31, 49, 0.5) 0, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(157, 67, 0, 0.05) 0, transparent 50%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--dc-primary);
+    color: var(--dc-bg);
+  }
+}
+
+@layer components {
+  /* ===== The Digital Curator Design System ===== */
+
+  /* Glass Effect — Floating elements */
+  .glass-effect {
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    background-color: rgba(12, 19, 36, 0.4);
+  }
+
+  .glass-nav {
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
+    background-color: rgba(12, 19, 36, 0.4);
+  }
+
+  /* Ghost Border — 15% opacity outline */
+  .ghost-border {
+    border: 1px solid rgba(88, 66, 55, 0.15);
+  }
+
+  /* Surface Cards — Tonal Layering (no shadows, no borders) */
+  .surface-lowest { background-color: var(--dc-surface-dim); }
+  .surface-low { background-color: var(--dc-surface-low); }
+  .surface-base { background-color: var(--dc-surface-container); }
+  .surface-high { background-color: var(--dc-surface-high); }
+  .surface-highest { background-color: var(--dc-surface-highest); }
+
+  /* Editorial Card — hover shifts tone, no scale */
+  .editorial-card {
+    background-color: var(--dc-surface-low);
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .editorial-card:hover {
+    background-color: var(--dc-surface-high);
+  }
+
+  /* Curator Chip — Pill shape */
+  .curator-chip {
+    @apply px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.15em];
+    background-color: var(--dc-surface-high);
+    color: var(--dc-on-surface);
+    transition: all 0.2s ease;
+  }
+  .curator-chip-active {
+    @apply px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.15em];
+    background-color: var(--dc-secondary);
+    color: var(--dc-bg);
+  }
+  .curator-chip-primary {
+    @apply px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-[0.15em];
+    background-color: var(--dc-primary);
+    color: var(--dc-bg);
+  }
+
+  /* Typography — Editorial */
+  .text-display {
+    @apply text-4xl md:text-6xl font-extrabold;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+  }
+  .text-headline {
+    @apply text-2xl md:text-3xl font-bold;
+    letter-spacing: -0.02em;
+  }
+  .text-label {
+    @apply text-xs font-medium uppercase;
+    letter-spacing: 0.15em;
+  }
+  .text-body-editorial {
+    @apply text-base;
+    line-height: 1.6;
+    color: var(--dc-on-surface-variant);
+  }
+
+  /* Accent text */
+  .text-curator-accent {
+    color: var(--dc-primary);
+  }
+  .text-curator-ethereal {
+    color: var(--dc-secondary);
+  }
+
+  /* Glass Card for forms */
+  .glass-card {
+    background-color: rgba(25, 31, 49, 0.6);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 1.5rem;
+  }
+
+  /* Glass card hover */
+  .glow-card {
+    transition: all 0.3s ease;
+  }
+  .glow-card:hover {
+    background-color: var(--dc-surface-high);
+  }
+
+  /* Ambient Glow — subtle inner glow for floating elements */
+  .ambient-glow {
+    box-shadow: 0 0 48px rgba(220, 225, 251, 0.06);
+  }
+
+  /* Vibe Chips */
+  .vibe-chip {
+    @apply px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.1em];
+    background-color: var(--dc-surface-high);
+    color: var(--dc-on-surface-variant);
+  }
+  .vibe-chip-primary {
+    background-color: rgba(249, 115, 22, 0.15);
+    color: var(--dc-primary);
+  }
+  .vibe-chip-secondary {
+    background-color: rgba(208, 188, 255, 0.15);
+    color: var(--dc-secondary);
+  }
+  .vibe-chip-tertiary {
+    background-color: rgba(147, 204, 255, 0.15);
+    color: var(--dc-tertiary);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--dc-primary-soft) 0%, var(--dc-primary) 100%);
+  }
+
+  /* Score badge */
+  .score-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-sm font-bold;
+    background-color: rgba(249, 115, 22, 0.15);
+    color: var(--dc-primary);
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar */
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Grain texture overlay */
+  .grain-overlay::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    z-index: 100;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* Smooth scroll */
+  .overflow-x-auto, .overflow-y-auto, .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--dc-surface-highest);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--dc-surface-bright);
+  }
+}

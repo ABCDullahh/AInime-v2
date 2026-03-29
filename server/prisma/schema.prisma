@@ -1,0 +1,124 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String   @id // Firebase UID
+  email               String   @unique
+  displayName         String?  @map("display_name")
+  avatarUrl           String?  @map("avatar_url")
+  profileVisibility   String   @default("public") @map("profile_visibility")
+  listVisibility      String   @default("public") @map("list_visibility")
+  activityVisibility  String   @default("public") @map("activity_visibility")
+  showStatsPublicly   Boolean  @default(true) @map("show_stats_publicly")
+  searchable          Boolean  @default(true)
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  animeList     UserAnimeList[]
+  tierLists     TierList[]
+  tierListLikes TierListLike[]
+  friendsAsUser   UserFriend[] @relation("UserFriends")
+  friendsAsFriend UserFriend[] @relation("FriendOfUsers")
+
+  @@map("users")
+}
+
+enum AnimeStatus {
+  SAVED
+  LOVED
+  WATCHING
+  WATCHED
+  DROPPED
+}
+
+model UserAnimeList {
+  id                 String      @id @default(uuid())
+  userId             String      @map("user_id")
+  animeId            Int         @map("anime_id")
+  status             AnimeStatus
+  rating             Int?
+  notes              String?
+  lastEpisodeWatched Int?        @map("last_episode_watched")
+  createdAt          DateTime    @default(now()) @map("created_at")
+  updatedAt          DateTime    @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, animeId])
+  @@map("user_anime_list")
+}
+
+enum TierRank {
+  S
+  A
+  B
+  C
+  D
+  F
+}
+
+model TierList {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  title       String   @db.VarChar(100)
+  description String?
+  visibility  String   @default("public")
+  likesCount  Int      @default(0) @map("likes_count")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  user  User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items TierListItem[]
+  likes TierListLike[]
+
+  @@map("tier_lists")
+}
+
+model TierListItem {
+  id              String   @id @default(uuid())
+  tierListId      String   @map("tier_list_id")
+  animeId         Int      @map("anime_id")
+  animeTitle      String   @map("anime_title") @db.VarChar(255)
+  animeCoverImage String?  @map("anime_cover_image")
+  tier            TierRank
+  position        Int      @default(0)
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  tierList TierList @relation(fields: [tierListId], references: [id], onDelete: Cascade)
+
+  @@map("tier_list_items")
+}
+
+model TierListLike {
+  id         String   @id @default(uuid())
+  tierListId String   @map("tier_list_id")
+  userId     String   @map("user_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  tierList TierList @relation(fields: [tierListId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([tierListId, userId])
+  @@map("tier_list_likes")
+}
+
+model UserFriend {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  friendId  String   @map("friend_id")
+  status    String   @default("pending") // pending, accepted, blocked
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user   User @relation("UserFriends", fields: [userId], references: [id], onDelete: Cascade)
+  friend User @relation("FriendOfUsers", fields: [friendId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, friendId])
+  @@map("user_friends")
+}

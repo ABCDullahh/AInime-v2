@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background with safe zone consideration for maskable icons -->
+  <rect width="512" height="512" fill="#1a1f2e"/>
+  <!-- Centered icon with 20% safe zone -->
+  <g transform="translate(102, 130) scale(0.6)">
+    <!-- Main A shape - left side -->
+    <path d="M180 0 L0 352 L60 352 L100 272 L200 272 L200 220 L120 220 L180 100 Z" fill="#2d4a6f"/>
+    <!-- Main A shape - right side -->
+    <path d="M220 0 L220 100 L280 220 L280 272 L200 272 L200 352 L340 352 L400 352 L220 0 Z" fill="#2d4a6f"/>
+    <!-- Play button triangle -->
+    <path d="M280 140 L340 180 L280 220 Z" fill="#2d4a6f"/>
+    <!-- Coral accent -->
+    <path d="M160 200 L200 140 L240 200 Z" fill="#f4845f"/>
+  </g>
+</svg>

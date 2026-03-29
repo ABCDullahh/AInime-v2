@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#0c1324",
+              "surface": "#0c1324",
+              "inverse-surface": "#dce1fb",
+              "tertiary-fixed-dim": "#93ccff",
+              "surface-dim": "#0c1324",
+              "on-secondary": "#3c0091",
+              "on-error": "#690005",
+              "surface-variant": "#2e3447",
+              "on-primary-container": "#582200",
+              "on-surface": "#dce1fb",
+              "on-tertiary-container": "#003554",
+              "on-secondary-fixed": "#23005c",
+              "on-tertiary-fixed": "#001d32",
+              "surface-container-low": "#151b2d",
+              "on-secondary-fixed-variant": "#5516be",
+              "surface-container": "#191f31",
+              "on-tertiary-fixed-variant": "#004b74",
+              "surface-container-lowest": "#070d1f",
+              "primary": "#ffb690",
+              "surface-tint": "#ffb690",
+              "outline-variant": "#584237",
+              "surface-bright": "#33394c",
+              "inverse-primary": "#9d4300",
+              "on-secondary-container": "#c4abff",
+              "primary-container": "#f97316",
+              "surface-container-high": "#23293c",
+              "on-surface-variant": "#e0c0b1",
+              "on-primary-fixed": "#341100",
+              "outline": "#a78b7d",
+              "on-error-container": "#ffdad6",
+              "primary-fixed": "#ffdbca",
+              "on-primary": "#552100",
+              "surface-container-highest": "#2e3447",
+              "primary-fixed-dim": "#ffb690",
+              "secondary-container": "#571bc1",
+              "on-tertiary": "#003351",
+              "on-background": "#dce1fb",
+              "secondary": "#d0bcff",
+              "tertiary-container": "#00a2f4",
+              "secondary-fixed": "#e9ddff",
+              "on-primary-fixed-variant": "#783200",
+              "tertiary-fixed": "#cde5ff",
+              "inverse-on-surface": "#2a3043",
+              "error": "#ffb4ab",
+              "tertiary": "#93ccff",
+              "error-container": "#93000a",
+              "secondary-fixed-dim": "#d0bcff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>body {
+    background-color: #0c1324;
+    color: #dce1fb;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-image: radial-gradient(circle at 50% 50%, rgba(25, 31, 49, 0.5) 0%, rgba(12, 19, 36, 1) 100%)
+    }
+.glass-effect {
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px)
+    }
+.editorial-title {
+    letter-spacing: -0.04em;
+    line-height: 0.85
+    }
+.grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD5hJGThzqGizi0rYCv87D-H52MEbPVmndCwCfKgCP0exzq31nCEqYOd5kNL6FzvlPMcZcj19w1h8or7n7KYk0VI9fVUOnBiSHYuysn4XW77DczsbhMNNXoWOgBvpkvt__8pG5Roo5CNMOBQ0EOk2QErL4PlfyUEG4joznxhx6fwvJRNKC7tIBznvSleYFIC39GrWFlKJTUZLJlzCfqsGXaZD3y6KN7STHsSW-Na-TOmViRSumlQ67niWzU0k5VYSHxp0HP7C0csig)
+    }</style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-[3.5rem] h-20 w-full max-w-none bg-[#0c1324]/40 backdrop-blur-[40px] no-border glass-effect">
+<div class="text-2xl font-black tracking-tighter text-slate-50 dark:text-slate-50 font-['Plus_Jakarta_Sans']">AInime</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium" href="#">Discover</a>
+<a class="text-orange-500 font-bold border-b-2 border-orange-500 pb-1 font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium" href="#">AI Search</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium" href="#">Calendar</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium" href="#">My List</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors font-['Plus_Jakarta_Sans'] tracking-[-0.04em] text-sm font-medium" href="#">Tier Lists</a>
+</div>
+<div class="flex items-center gap-6 text-slate-50">
+<span class="material-symbols-outlined cursor-pointer hover:text-orange-400 transition-all duration-300" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-orange-400 transition-all duration-300" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex flex-col justify-end items-start px-[3.5rem] pb-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Cinematic wide shot of a futuristic neon city under a dark starry sky with towering mecha silhouettes in the distance and soft blue mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTXH1vEohgZmhQ465fD9ekPEY0IlvJEUPt4uEBHOKs_v32cjaKbmIsWTuY97CHlCgrvYDC_zGsA8l5PeWz_Ss7nCTr9MbjyYik3ANDJ34vFgnt6xsegsQU3r0ymc4q4oBYvD7ueD8m9kzGbhB6IlXyY1YfqOcBBrrn6fzd1iFMYMFoYT_rF0Q26IFzmxxjg5GgpTa56W9reKLhMK6q9vxfWd6Vk0d3oJQbrWnIphcHPEFO4kA00_x5EZP9TFbspyuVHYwbRPWy3xg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl">
+<p class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-secondary mb-4">Original Series / Season 04</p>
+<h1 class="text-8xl md:text-[10rem] font-black editorial-title text-on-surface mb-8">
+                    NEON <span class="italic font-light text-primary">GENESIS:</span><br/>REBIRTH
+                </h1>
+<div class="flex items-center gap-6">
+<button class="bg-primary-container text-on-primary-container px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform">
+                        Watch Now
+                    </button>
+<button class="bg-transparent border border-outline-variant/20 text-on-background px-12 py-5 rounded-full font-bold text-lg hover:bg-surface-container-high transition-colors">
+                        Add to List
+                    </button>
+</div>
+</div>
+</section>
+<!-- Signature Widgets -->
+<section class="px-[3.5rem] -mt-20 relative z-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between h-64 border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="speed">speed</span>
+<div>
+<div class="text-5xl font-black text-on-surface">98<span class="text-xl font-medium text-on-surface-variant">%</span></div>
+<div class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-on-surface-variant mt-2">Finishability</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between h-64 border-l-4 border-secondary">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="bolt">bolt</span>
+<div>
+<div class="text-5xl font-black text-on-surface">High</div>
+<div class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-on-surface-variant mt-2">Energy Output</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between h-64 border-l-4 border-error">
+<span class="material-symbols-outlined text-error text-4xl" data-icon="water_drop">water_drop</span>
+<div>
+<div class="text-5xl font-black text-on-surface">Extreme</div>
+<div class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-on-surface-variant mt-2">Tear Risk</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between h-64 border-l-4 border-tertiary">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="landscape">landscape</span>
+<div>
+<div class="text-5xl font-black text-on-surface">Neo-T</div>
+<div class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-on-surface-variant mt-2">Setting Type</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Synopsis -->
+<section class="py-32 px-[3.5rem] grid grid-cols-1 md:grid-cols-12 gap-20">
+<div class="md:col-span-7">
+<h2 class="text-4xl font-bold mb-10 text-on-surface">The Curator's Note</h2>
+<p class="text-xl leading-[1.8] text-on-surface-variant font-light">
+                    In the year 2184, the remnants of humanity reside within the crystalline spire of Neo-Tokyo. As the barrier between digital consciousness and physical reality begins to dissolve, a young pilot must confront the echoes of a forgotten past. <span class="text-primary font-medium italic">Neon Genesis: Rebirth</span> is a masterclass in atmospheric storytelling, blending philosophical inquiry with visceral, neon-soaked action sequences that redefine the genre's boundaries.
+                </p>
+<div class="mt-12 flex flex-wrap gap-3">
+<span class="bg-surface-container-high px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-on-surface">Cyberpunk</span>
+<span class="bg-surface-container-high px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-on-surface">Psychological</span>
+<span class="bg-surface-container-high px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-on-surface">Mecha</span>
+<span class="bg-surface-container-high px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-on-surface">Existential</span>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10">
+<h3 class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-secondary mb-6">Production Specs</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Studio</span>
+<span class="font-bold">Ethereal Animation</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Director</span>
+<span class="font-bold">Kenji Sato</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-on-surface-variant">Score</span>
+<span class="font-bold">Loom Soundworks</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Streaming Links -->
+<section class="py-20 px-[3.5rem] bg-surface-container-low/30">
+<h2 class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.2em] uppercase text-on-surface-variant mb-12 text-center">Available To Stream On</h2>
+<div class="flex flex-wrap justify-center gap-8">
+<div class="bg-surface-container p-8 rounded-2xl flex items-center gap-6 glass-effect border border-white/5 w-72 hover:border-primary/40 transition-all group">
+<div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center font-black text-xl">N</div>
+<div>
+<div class="font-bold text-on-surface">Netflix</div>
+<div class="text-xs text-on-surface-variant">4K HDR Available</div>
+</div>
+<span class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 transition-opacity" data-icon="open_in_new">open_in_new</span>
+</div>
+<div class="bg-surface-container p-8 rounded-2xl flex items-center gap-6 glass-effect border border-white/5 w-72 hover:border-primary/40 transition-all group">
+<div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="tv">tv</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">Crunchyroll</div>
+<div class="text-xs text-on-surface-variant">Simulcast HD</div>
+</div>
+<span class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 transition-opacity" data-icon="open_in_new">open_in_new</span>
+</div>
+</div>
+</section>
+<!-- Similar Anime -->
+<section class="py-32 px-[3.5rem]">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-5xl font-black editorial-title mb-4">FOR FANS <span class="italic font-light text-secondary">OF THE</span> VOID</h2>
+<p class="text-on-surface-variant uppercase tracking-widest text-xs">Curated recommendations based on atmospheric similarity</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-surface-container-high transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+<div class="group relative rounded-xl overflow-hidden aspect-[3/4] bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Dark dramatic anime character portrait with glowing mechanical eyes and rainy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgC6P8rrt8fJUJ2ZEW-2sRMu9c_LQop9JGBFSjdbbReqvWduHsA-UVYEfONFhjPoFHlmnH1PkCFQ8HwZbcvlWVYz853KRolOUzfglTQTNGMPpPSueRgvXyNlarVzMFddoMH81UPFnjN2bvb7EHEkjyvEtX7h64u1PWsfPvzTAphwZWKajug_BXjyAOn0cm1bort32MlOe4nUNN0tgFoqNiv8glOjGd5J-i9NSVzFxDujUFDxnXhTHEHIKmAFy-qAGSPSnv3XzciX8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-bold px-3 py-1 rounded-full text-sm">94% Match</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h4 class="text-2xl font-bold mb-1">CYBER_DYNE</h4>
+<p class="text-xs text-on-surface-variant tracking-widest uppercase">Atmospheric Sci-Fi</p>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden aspect-[3/4] bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Surreal landscape with floating islands and a giant moon reflected in dark still water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS8pc0WVSG_0u_MfcAvtQecMw4YkGueK-VhDxPESk8LVE55vi3fNOKEnrGwriJfRDfakFSJbUC7Z7H9L9aP3xFnPkbfaU-4pIflznr9-J4IIrcUYKuxD4dO6ZtkPI3WmV6LUyoO6vYPL-N4jjBwfUo4B-qFUS9Fo2cvAWPOyxZbaUcEjPSMT7zgchkjbuIXusWzRlDvAwiQEkhTUI9Ye5zW_BseIIbHWKh8OZuNCfHJYjt6i5bgLWXYbenx9NrbPUQzLvIcexfmik"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-bold px-3 py-1 rounded-full text-sm">88% Match</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h4 class="text-2xl font-bold mb-1">LUNAR REVELRY</h4>
+<p class="text-xs text-on-surface-variant tracking-widest uppercase">Experimental Noir</p>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden aspect-[3/4] bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Monochrome sketch style of a lonely figure walking through a massive desolate industrial pipe factory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV6CW8vN0PwzNpUaZ8_2DyTDZ3EviDuCuhiWuTVvtLWyp9Lb2CiJdLJsxk72RgfZwnM6umkj8neHLVR-uG60UxJFwBg5Fkweou5UisS959gHYyRM36F3oF7hd1mZJ8I8gsF3N7ijcwODZ4MHMR4PAsPuuQFfCFNDRAF2pKNqZticvZnqfNXZOBxyjthe95YmynccSSpo5KRekFfxPLWeDpW73tqTI2b4KInV3AWYiKzrjk0qclpri0f6bS_okVeKZUPvUBqrP1n0k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-bold px-3 py-1 rounded-full text-sm">82% Match</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h4 class="text-2xl font-bold mb-1">SILENT ARCH</h4>
+<p class="text-xs text-on-surface-variant tracking-widest uppercase">Minimalist Drama</p>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden aspect-[3/4] bg-surface-container-highest">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vibrant abstract shapes of purple and orange smoke swirling around a glowing central sphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKPbp6ee_3F1PXBBbW3xw6j5Ht9etWr6RrYUen1QvQFZXDJQqQ1gIQrDuPMrBwBncjYTqMDwx0TY8OzpnMBVyXCd5yT5p6DzVGJb5cQ1T4el55Dc1rPPcCfts3xm1fXQxjPcZea3-qvIAsdftGCZfdbsoYkJ7pg-wfM4uoOScVEI0Ys-RAwOeI2KbHHSFoAS-P07fVwGNz2aB5UI1h2IigA4XTCsmY8kcRwJhLK_tWbdxgPzZF-MPE_7dM6QSBy2af3aHck369oBw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 bg-primary text-on-primary font-bold px-3 py-1 rounded-full text-sm">79% Match</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h4 class="text-2xl font-bold mb-1">DATA CORE</h4>
+<p class="text-xs text-on-surface-variant tracking-widest uppercase">Techno Thriller</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col items-center justify-center w-full px-[3.5rem] bg-[#0c1324] py-20 tonal-shift">
+<div class="text-6xl font-black text-slate-800/50 mb-8 block text-center font-['Plus_Jakarta_Sans'] uppercase">AInime</div>
+<div class="flex gap-12 mb-12">
+<a class="text-slate-500 hover:text-orange-500 italic transition-all font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase" href="#">About</a>
+<a class="text-slate-500 hover:text-orange-500 italic transition-all font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-orange-500 italic transition-all font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase" href="#">Terms</a>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-[0.75rem] tracking-[0.15em] uppercase text-slate-500">© 2024 AInime. The Digital Curator.</p>
+</footer>
+</body></html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#070d1f",
+            "surface": "#0c1324",
+            "inverse-surface": "#dce1fb",
+            "tertiary-fixed-dim": "#93ccff",
+            "surface-dim": "#0c1324",
+            "on-secondary": "#3c0091",
+            "on-error": "#690005",
+            "surface-variant": "#2e3447",
+            "on-primary-container": "#582200",
+            "on-surface": "#dce1fb",
+            "on-tertiary-container": "#003554",
+            "on-secondary-fixed": "#23005c",
+            "on-tertiary-fixed": "#001d32",
+            "surface-container-low": "#151b2d",
+            "on-secondary-fixed-variant": "#5516be",
+            "surface-container": "#191f31",
+            "on-tertiary-fixed-variant": "#004b74",
+            "surface-container-lowest": "#070d1f",
+            "primary": "#ffb690",
+            "surface-tint": "#ffb690",
+            "outline-variant": "#584237",
+            "surface-bright": "#33394c",
+            "inverse-primary": "#9d4300",
+            "on-secondary-container": "#c4abff",
+            "primary-container": "#f97316",
+            "surface-container-high": "#23293c",
+            "on-surface-variant": "#e0c0b1",
+            "on-primary-fixed": "#341100",
+            "outline": "#a78b7d",
+            "on-error-container": "#ffdad6",
+            "primary-fixed": "#ffdbca",
+            "on-primary": "#552100",
+            "surface-container-highest": "#2e3447",
+            "primary-fixed-dim": "#ffb690",
+            "secondary-container": "#571bc1",
+            "on-tertiary": "#003351",
+            "on-background": "#dce1fb",
+            "secondary": "#d0bcff",
+            "tertiary-container": "#00a2f4",
+            "secondary-fixed": "#e9ddff",
+            "on-primary-fixed-variant": "#783200",
+            "tertiary-fixed": "#cde5ff",
+            "inverse-on-surface": "#2a3043",
+            "error": "#ffb4ab",
+            "tertiary": "#93ccff",
+            "error-container": "#93000a",
+            "secondary-fixed-dim": "#d0bcff"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #070d1f;
+      background-image: radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.03) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, rgba(208, 188, 255, 0.03) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(25, 31, 49, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .text-outline {
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+      color: transparent;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .active-day-glow {
+      box-shadow: 0 0 40px -5px rgba(249, 115, 22, 0.3);
+    }
+  </style>
+</head>
+<body class="font-body text-on-background selection:bg-primary-container selection:text-on-primary-container antialiased">
+<!-- Shared TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-[#070d1f]/60 backdrop-blur-[20px] flex justify-between items-center px-[4rem] h-24 border-b border-white/5">
+<div class="text-2xl font-black tracking-tighter text-white uppercase italic">
+      AInime
+    </div>
+<div class="hidden md:flex items-center gap-12 font-['Plus_Jakarta_Sans'] tracking-tight text-xs font-semibold uppercase">
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Discover</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">AI Search</a>
+<a class="text-primary-container font-black relative" href="#">Calendar <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-container"></span></a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">My List</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">Tier Lists</a>
+</div>
+<div class="flex items-center gap-8">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-white transition-all" data-icon="search">search</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-white transition-all" data-icon="account_circle">account_circle</span>
+</div>
+</nav>
+<main class="pt-48 pb-32 px-[4rem] max-w-[1600px] mx-auto">
+<!-- Header Section -->
+<header class="mb-24 flex justify-between items-end">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="h-[1px] w-8 bg-primary-container"></div>
+<span class="text-[0.65rem] tracking-[0.3em] uppercase text-primary-container font-black">Volume 04 / Winter Edition</span>
+</div>
+<h1 class="text-8xl md:text-9xl font-black tracking-[-0.06em] leading-[0.85] text-white uppercase">
+          Seasonal <br/>
+<span class="italic font-light text-slate-700">Calendar</span>
+</h1>
+</div>
+<div class="flex gap-4 mb-4">
+<button class="flex items-center gap-2 p-4 rounded-full border border-white/5 text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined !text-xl" data-icon="tune">tune</span>
+</button>
+</div>
+</header>
+<!-- Day Selector -->
+<section class="mb-32">
+<div class="w-full flex items-center justify-between border-y border-white/5 py-10">
+<div class="flex-1 flex justify-between items-center px-10">
+<button class="text-xs font-black tracking-[0.2em] text-slate-700 hover:text-slate-300 transition-all uppercase">Sun</button>
+<button class="text-xs font-black tracking-[0.2em] text-slate-700 hover:text-slate-300 transition-all uppercase">Mon</button>
+<button class="text-xs font-black tracking-[0.2em] text-slate-700 hover:text-slate-300 transition-all uppercase">Tue</button>
+<div class="relative group">
+<div class="absolute inset-0 bg-primary-container/20 blur-2xl rounded-full opacity-50 active-day-glow transition-all"></div>
+<button class="relative bg-primary-container text-on-primary-container text-xs font-black tracking-[0.2em] w-14 h-14 rounded-full flex items-center justify-center uppercase shadow-xl">Wed</button>
+</div>
+<button class="text-xs font-black tracking-[0.2em] text-slate-700 hover:text-slate-300 transition-all uppercase">Thu</button>
+<button class="text-xs font-black tracking-[0.2em] text-slate-700 hover:text-slate-300 transition-all uppercase">Fri</button>
+<button class="text-xs font-black tracking-[0.2em] text-slate-700 hover:text-slate-300 transition-all uppercase">Sat</button>
+</div>
+</div>
+</section>
+<!-- Airing Today Section -->
+<section class="mb-32">
+<div class="flex items-center justify-between mb-16">
+<div class="flex items-baseline gap-4">
+<h2 class="text-3xl font-black tracking-tight uppercase">Airing <span class="italic font-light text-slate-500">Today</span></h2>
+<span class="text-xs font-bold text-slate-600 tracking-widest uppercase">/ Wednesday</span>
+</div>
+<a class="text-[0.65rem] font-black tracking-[0.2em] uppercase text-primary-container border-b border-primary-container/30 pb-1" href="#">View Timeline</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Spotlight Card 1 -->
+<div class="group relative overflow-hidden rounded-2xl glass-card aspect-[16/7] flex items-center transition-all duration-700 hover:translate-y-[-4px]">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-1000 scale-105 group-hover:scale-100" data-alt="Cyberpunk city street at night with glowing neon signs and rainy reflections, anime art style cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoZM-H1aWsu0Y82zsSFeq-Wd2QRTQzRV3ULO6aPxb1-od85oR_2wSfn3wuXegfjok2UW-VaCVuKVGUVr6kYA_YynFFmT_i6NgbVmWYLnI75Acoa2KAZpHW3DNkVN0KZC4ta5icZ9Yrg-Etk_-fAPdqIjE8j975Yb2g1zk3Qxe3ippiceiPJPwttkvGCg78zf7tWfHsVCMqzhHzWiqAu4vgpydPPTHWxcg4PZN_NrMfCJ5-9l_PU0uyk05oX1u0-xprcbyKEv2KGuU"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#070d1f] via-[#070d1f]/80 to-transparent"></div>
+</div>
+<div class="relative z-10 px-16 w-full flex justify-between items-center">
+<div class="max-w-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(208,188,255,0.6)]"></span>
+<span class="text-[0.6rem] tracking-[0.25em] font-black text-secondary uppercase">Action / Sci-Fi</span>
+</div>
+<h3 class="text-4xl font-black tracking-tighter mb-4 leading-none text-white uppercase italic">NEO:GENESIS</h3>
+<div class="flex items-center gap-3 text-slate-500">
+<span class="text-[0.65rem] font-bold tracking-[0.2em] uppercase">Ep 12</span>
+<span class="w-1 h-1 rounded-full bg-slate-700"></span>
+<span class="text-[0.65rem] font-bold tracking-[0.2em] uppercase">Finale</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[0.6rem] tracking-[0.2em] font-bold text-slate-600 uppercase mb-2">Airing In</p>
+<p class="text-5xl font-black tracking-tighter text-white tabular-nums">04:22</p>
+<p class="text-[0.6rem] font-bold text-primary-container tracking-widest uppercase mt-1">PM EST</p>
+</div>
+</div>
+</div>
+<!-- Spotlight Card 2 -->
+<div class="group relative overflow-hidden rounded-2xl glass-card aspect-[16/7] flex items-center transition-all duration-700 hover:translate-y-[-4px]">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-1000 scale-105 group-hover:scale-100" data-alt="Serene mountain landscape with a lone traditional temple surrounded by cherry blossoms in misty morning light, soft atmospheric anime vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwVYnc1b4fsQqOl95kWqTp4vbmwsgxfAM2Xwh1yWpN_ir-s0ZsHL_PVJFxNcV8FzoMs5YjXeupqwsrdsXRFk4Nt4-pJ7Za6JoWTwrLJkIBuuPubpih_Tlc3k5cPxCs-EQy5a6QWIsKGSQaXnBgzYHYRSqWYboyhDwbrH-aZumnwgODWtd3EXKdnLz_M42006X_hR7N3Ltgucf-JlTqytqjk5qha1Z8WwlfPgq8CRMEzTdp1wHKZQZJKjegzhnlJs7BCoTl-45_F0Q"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#070d1f] via-[#070d1f]/80 to-transparent"></div>
+</div>
+<div class="relative z-10 px-16 w-full flex justify-between items-center">
+<div class="max-w-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary shadow-[0_0_8px_rgba(147,204,255,0.6)]"></span>
+<span class="text-[0.6rem] tracking-[0.25em] font-black text-tertiary uppercase">Fantasy / Drama</span>
+</div>
+<h3 class="text-4xl font-black tracking-tighter mb-4 leading-none text-white uppercase italic">MIST WALKER</h3>
+<div class="flex items-center gap-3 text-slate-500">
+<span class="text-[0.65rem] font-bold tracking-[0.2em] uppercase">Ep 08</span>
+<span class="w-1 h-1 rounded-full bg-slate-700"></span>
+<span class="text-[0.65rem] font-bold tracking-[0.2em] uppercase">Simulcast</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[0.6rem] tracking-[0.2em] font-bold text-slate-600 uppercase mb-2">Airing In</p>
+<p class="text-5xl font-black tracking-tighter text-white tabular-nums">07:45</p>
+<p class="text-[0.6rem] font-bold text-primary-container tracking-widest uppercase mt-1">PM EST</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Weekly Watchlist Editorial Grid -->
+<section>
+<div class="flex items-end justify-between mb-16">
+<div>
+<h2 class="text-3xl font-black tracking-tight uppercase">Weekly <span class="italic font-light text-slate-500">Watchlist</span></h2>
+</div>
+<div class="flex gap-8">
+<div class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span class="text-[0.6rem] font-black tracking-widest uppercase text-slate-500">Romance</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-primary-container"></span>
+<span class="text-[0.6rem] font-black tracking-widest uppercase text-slate-500">Action</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1 h-1 rounded-full bg-tertiary"></span>
+<span class="text-[0.6rem] font-black tracking-widest uppercase text-slate-500">Fantasy</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-4 gap-12">
+<!-- Item 1: Large -->
+<div class="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl glass-card aspect-square">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 transition-transform duration-1000 group-hover:scale-105" data-alt="Abstract dynamic flow of orange and blue energy lines in dark space, high contrast, clean minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXVbnEYLdIhM1WWFaBfomXa__oyDH7L7kImJJVWMvbDtYImIaaI5NkAHqqtXiTqEj7ez8W1NqxelJAgav9gWNWwPoGk_6ruGfjQXI9jCCaZd1lk-RgibvxkKuL1mAkHT7gCwBymxSuQSWWgqxpAglWBt9LL-duZI9relUfbZs4GYFbwmLhl8Blg3zTgHQdMs41D3uSULxc8pE2ZsRpdAm3HxIHtExwE7Qmtu0gg4oSqlZeT2Hl3msVDxWTCOL2WzWWNK0aYpZb1Ao"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#070d1f] to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-16">
+<div class="flex items-center gap-4 mb-8">
+<span class="px-4 py-1.5 bg-primary-container text-on-primary-container text-[0.6rem] font-black tracking-[0.2em] uppercase rounded-full">Must Watch</span>
+<span class="text-[0.65rem] tracking-[0.2em] font-bold text-slate-400 uppercase">Friday Release</span>
+</div>
+<h4 class="text-6xl font-black tracking-tighter mb-6 leading-[0.9] text-white uppercase italic">CHRONO<br/>STRATOS</h4>
+<p class="text-sm text-slate-500 max-w-xs leading-relaxed font-medium">The final frontier of human existence explored through the eyes of the last orbital pilot.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative group overflow-hidden rounded-2xl glass-card aspect-square transition-all duration-500 hover:border-white/10">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale transition-all duration-700 group-hover:opacity-40 group-hover:grayscale-0" data-alt="Stylized portrait of a tech-wear inspired character with neon purple highlights against a dark urban backdrop, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-_StKFBjUCzRyjdpUEMaiODUVQkYbZvzWL9sAKkqs0D_UDR1o6xee94uLNCYx_HCzfxLVnqLXEAMvABckxfByWZKiMnJpcnLvoSNTAU9HdrAWKi4dD-AQJ3O1sC3vRHVVPLV2uuyyPdEZXZx2PaxS57CXA-0-Mk1NnBbIYts4Sg_DK10MmU41ffbtaoB96cF8kC_TfQdjJcowmPdfO8_p-sk5tpmiJPjCneFgh7AMj5W650K5gbc6cKunGC-do7y3nJ9OBp2Ldg0"/>
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-secondary opacity-50 group-hover:opacity-100 transition-opacity" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="absolute bottom-0 left-0 p-10">
+<h4 class="text-xl font-black tracking-tight mb-2 text-white uppercase italic">VELVET REIGN</h4>
+<p class="text-[0.6rem] tracking-[0.2em] font-bold text-slate-500 uppercase">Drama / Romance</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative group overflow-hidden rounded-2xl glass-card aspect-square transition-all duration-500 hover:border-white/10">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale transition-all duration-700 group-hover:opacity-40 group-hover:grayscale-0" data-alt="Minimalist geometric shapes floating in a deep navy void, soft lighting, clean design aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz8Ygbm1ZJ8YGd-5IieIzNa_yHuLxXs7kWDmopta5Pw6sAu2fps5B3uWbGaMiyx9jsW53GTxfDT-w-duMzA_mIo9xOQh0p2fek_m7eLJzOrpNQkLhj_PKxI7E-hacwuX1bbcajDPmAr-Ub0avXwLesuSOE3egmDCktiib-JqXH-Xeg1hcoR99I17rkNZk1Xb7u13M4uZFMYXrhw9ZbOBYsdIGRbN_dsEE-MPWvU8MxVSIm1EFXgkhNoqhgv-U68cv4GcMhM0MfiKw"/>
+<div class="absolute bottom-0 left-0 p-10">
+<h4 class="text-xl font-black tracking-tight mb-2 text-white uppercase italic">ECHOES</h4>
+<p class="text-[0.6rem] tracking-[0.2em] font-bold text-slate-500 uppercase">Psychological</p>
+</div>
+</div>
+<!-- Item 4: Wide -->
+<div class="col-span-2 relative group overflow-hidden rounded-2xl glass-card h-56 transition-all duration-500 hover:border-white/10">
+<div class="flex h-full">
+<div class="w-2/5 overflow-hidden">
+<img class="w-full h-full object-cover opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-50 transition-all duration-700" data-alt="Dramatic storm clouds over a dark ocean at twilight, deep blues and purples, cinematic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL_LpM8KW2mT4mrWOKws9OUQbzzIVBF3DRvUOSWma-MovM2gOT4ySM_4txES47SqxTzPaUf3GGuJa8dk5WdqMieHPC0GcIohVij40Rbp-XSfbhUFcr-R0IEgetPZaz_jHYYE2Egg1GdA1ZeVDCvpRVpB-TzROVz3N5OYo8qmVGuAalIIV3-NrLjCA_vlyK1KD5-fg7Ra2D_jud1QNYOiEbWRtL7G4UeRy4rg1Nc_158DbZYxjCGPpDxWHHrsxeuF2bPYCc_CB-9Mk"/>
+</div>
+<div class="w-3/5 p-10 flex flex-col justify-center">
+<div class="flex items-center justify-between mb-4">
+<h4 class="text-2xl font-black tracking-tight text-white uppercase italic">STORM'S EDGE</h4>
+<span class="text-[0.6rem] tracking-[0.2em] font-bold text-primary-container uppercase">Sat / 11:00 PM</span>
+</div>
+<p class="text-xs text-slate-500 leading-relaxed line-clamp-2 font-medium">A gripping tale of survival in a world where the weather is a conscious weapon controlled by the elite.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Footer Component -->
+<footer class="bg-[#070d1f] w-full pt-32 pb-16 flex flex-col items-center justify-center border-t border-white/5 mt-32">
+<div class="text-8xl font-black text-white/5 mb-12 tracking-tighter uppercase italic select-none">
+      AINIME
+    </div>
+<div class="flex gap-16 mb-12 font-['Plus_Jakarta_Sans'] text-[0.65rem] tracking-[0.3em] uppercase font-bold">
+<a class="text-slate-600 hover:text-white transition-all" href="#">Editorial</a>
+<a class="text-slate-600 hover:text-white transition-all" href="#">Archives</a>
+<a class="text-slate-600 hover:text-white transition-all" href="#">Privacy</a>
+<a class="text-slate-600 hover:text-white transition-all" href="#">Terms</a>
+</div>
+<p class="text-slate-700 font-['Plus_Jakarta_Sans'] text-[0.6rem] tracking-[0.3em] uppercase font-medium">
+      © 2024 AInime. THE DIGITAL CURATOR.
+    </p>
+</footer>
+<!-- Floating Navigation Indicator -->
+<div class="fixed bottom-12 left-1/2 -translate-x-1/2 z-50">
+<div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-full px-8 py-4 flex items-center gap-10 shadow-3xl">
+<button class="flex items-center gap-3 text-primary-container">
+<span class="material-symbols-outlined !text-lg" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-[0.65rem] font-black tracking-[0.2em] uppercase">Curator AI</span>
+</button>
+<div class="w-[1px] h-4 bg-white/10"></div>
+<button class="text-slate-400 hover:text-white transition-all">
+<span class="material-symbols-outlined !text-lg" data-icon="bookmark">bookmark</span>
+</button>
+<button class="text-slate-400 hover:text-white transition-all">
+<span class="material-symbols-outlined !text-lg" data-icon="dashboard">dashboard</span>
+</button>
+</div>
+</div>
+</body></html>
